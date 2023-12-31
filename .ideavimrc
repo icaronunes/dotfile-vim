@@ -1,4 +1,7 @@
+ ""Configuracao de comando Nvim para Android Studio.
+
 " Find more examples here: https://jb.gg/share-ideavimrc
+
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Source your .vimrc
 source ~/.vimrc
@@ -8,12 +11,24 @@ set ideajoin
 
 nnoremap -- :action OptimizeImports <CR>
 nmap <leader>= <Action>(ReformatCode)
+nmap zz <Action>(ExpandCollapseToggleAction)
+nmap za <Action>(CollapseAllRegions)
+nmap zA <Action>(ExpandAllRegions)
 """ apenas '==' formata linha
 
 """Refata codigo
 nnoremap <Leader>re :action RenameElement<CR>
 nmap <leader>r <Action>(Refactorings.QuickListPopupAction)
+noremap <Space>cs  :action ChangeSignature<CR>
+noremap <Space><enter> :action Run<CR>
+nnoremap <Space>d<enter>  :action ChooseDebugConfiguration<CR>
+""nmap <leader>qf <Action>(ShowIntentionActions) - alt + enter é melhor
+"" o que foi selecionado sera envolvido, por varias opcoes - if, when, row etc
+xmap <leader>sw :<C-u><Action>(SurroundWith)<CR>
+"" Abre o google com trecho selecionado
+xmap <leader>web :<C-u><Action>($SearchWeb)<CR>
 
+""nmap <leader>sw <Action>($SearchWeb)
 "" Shift + leader [Space] vai para proximo erro
 nmap ]e <Action>(GotoNextError)
 nmap [e <Action>(GotoPreviousError)
@@ -33,7 +48,7 @@ nmap =c <Action>(VcsShowCurrentChangeMarker)
 "" menu do git
 nmap <leader>g <Action>(Vcs.QuickListPopupAction)
 
-"" go to - sintaxe 
+"" go to - sintaxe
 nmap gD <Action>(GotoTypeDeclaration)
 nnoremap gi :action GotoImplementation <CR>
 nmap gl <Action>(QuickJavaDoc)
@@ -57,6 +72,7 @@ nnoremap <leader>sv :action SplitVertically <CR>
 nnoremap <leader>sh :action SplitHorizontally <CR>
 nnoremap <leader>sc :action UnsplitAll <CR>
 nnoremap <leader>n :action NextSplitter <CR>
+nnoremap <leader>em :action RunningDevices <CR>
 
 
 "" menu - navegar entre arquivos
@@ -75,3 +91,4 @@ nnoremap <leader>m :action ShowNavBar<CR>
 "" mostra estrurura da classe mais completo - metodos da class e variaveis
 map <leader>o <Action>(FileStructurePopup)
 nnoremap <leader>fr :action RecentFiles <CR>
+nmap <leader>cm <Action>(CodeMenu)

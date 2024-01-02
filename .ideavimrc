@@ -16,12 +16,13 @@ nmap za <Action>(CollapseAllRegions)
 nmap zA <Action>(ExpandAllRegions)
 """ apenas '==' formata linha
 
+noremap <Space><enter> :action Run<CR>
+nnoremap <Space>d<enter>  :action ChooseDebugConfiguration<CR>
+
 """Refata codigo
 nnoremap <Leader>re :action RenameElement<CR>
 nmap <leader>r <Action>(Refactorings.QuickListPopupAction)
 noremap <Space>cs  :action ChangeSignature<CR>
-noremap <Space><enter> :action Run<CR>
-nnoremap <Space>d<enter>  :action ChooseDebugConfiguration<CR>
 ""nmap <leader>qf <Action>(ShowIntentionActions) - alt + enter é melhor
 "" o que foi selecionado sera envolvido, por varias opcoes - if, when, row etc
 xmap <leader>sw :<C-u><Action>(SurroundWith)<CR>

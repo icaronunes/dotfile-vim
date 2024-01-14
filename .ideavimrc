@@ -1,4 +1,4 @@
- ""Configuracao de comando Nvim para Android Studio.
+""Configuracao de comando Nvim para Android Studio.
 
 " Find more examples here: https://jb.gg/share-ideavimrc
 
@@ -6,7 +6,11 @@
 "" Source your .vimrc
 source ~/.vimrc
 
-
+""plugins which-key - mostra um dialog com os comandos.
+set which-key
+set notimeout
+set timeoutlen=5000
+""
 set ideajoin
 
 nnoremap -- :action OptimizeImports <CR>
